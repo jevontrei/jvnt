@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // and let's add in prisma generated files to ignore (maybe not necessary):
+    "src/generated/**/*",
   ]),
 ]);
 
