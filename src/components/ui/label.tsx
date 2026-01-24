@@ -21,4 +21,5 @@ function Label({
   );
 }
 
+// named export -- must import with exact name
 export { Label };

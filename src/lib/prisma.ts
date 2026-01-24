@@ -16,6 +16,7 @@ const pool = new pg.Pool({
 
 const adapter = new PrismaPg(pool);
 
+// named export -- must import with exact name
 // ?? returns the first defined (non-nullish) value, while || returns the first truthy value
 export const prisma = globalForPrisma.prisma ?? new PrismaClient({ adapter });
 

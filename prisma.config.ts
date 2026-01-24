@@ -3,6 +3,7 @@
 import "dotenv/config";
 import { defineConfig } from "prisma/config";
 
+// default export -- can import with any name
 export default defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {

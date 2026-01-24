@@ -18,4 +18,5 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   );
 }
 
+// named export -- must import with exact name
 export { Input };

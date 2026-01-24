@@ -60,5 +60,5 @@ function Button({
     />
   );
 }
-
+// named export -- must import with exact name
 export { Button, buttonVariants };
