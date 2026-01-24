@@ -33,13 +33,13 @@ export default function RootLayout({
       >
         <NavBar />
 
-        <h1 className="text-6xl">JVNT</h1>
+        <h1 className="text-6xl p-8">JVNT</h1>
 
         {children}
 
         <Toaster position="top-left" richColors />
 
-        <footer>&copy; JVT 2026</footer>
+        <footer className="p-8">&copy; JVT 2026</footer>
 
         {/* TODO: add github icon */}
       </body>

@@ -22,7 +22,7 @@ model Movie {
   title   String
   // year    Int
   content String?
-  watched Boolean?
+  watched Boolean @default(false)
 
   // userId String
   // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)

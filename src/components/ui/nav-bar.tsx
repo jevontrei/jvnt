@@ -31,14 +31,15 @@ export default function NavBar() {
   ];
 
   return (
-    <>
+    <div className="p-8">
       {navItems.map((navItem, i) => {
         return (
-          <Button key={i}>
+          // TODO: fix this tw
+          <Button key={i} className="gap-4">
             <Link href={navItem.link}>{navItem.name}</Link>
           </Button>
         );
       })}
-    </>
+    </div>
   );
 }

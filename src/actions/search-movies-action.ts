@@ -6,8 +6,10 @@ import { prisma } from "@/lib/prisma";
 
 // define types for the return value of this action; to prevent annoying typescript complaints in search-forecast-form.tsx
 // type export -- must import with exact name
+// TODO: don't do this; just grab the schema's type that already exists
 export type MovieDataType = {
   title: string;
+  watched: boolean;
   //   year: number;
 };
 
@@ -57,11 +59,15 @@ export async function SearchMoviesAction(
 
     const response = await fetch(url, options);
     const json = await response.json();
+    const result = json["results"][0];
     // console.log(Object.keys(json));
     // console.log(json);
-    // console.log(json["results"][0]["title"]);
+    // console.log(result["title"]);
 
-    const movie: MovieDataType = { title: json["results"][0]["title"] };
+    const movie: MovieDataType = {
+      title: result["title"],
+      watched: result["watched"],
+    };
     console.log("movie:", movie);
 
     // add movie to db

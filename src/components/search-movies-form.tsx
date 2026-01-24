@@ -44,7 +44,7 @@ export default function SearchMoviesForm() {
   }
 
   return (
-    <>
+    <div className="p-8">
       {movieResults && (
         <div className="mt-8 max-h-96 overflow-y-auto border rounded">
           <p>Result:</p>
@@ -68,6 +68,6 @@ export default function SearchMoviesForm() {
           Search
         </Button>
       </form>
-    </>
+    </div>
   );
 }
