@@ -13,8 +13,8 @@ export default function NavBar() {
       link: "/profile",
     },
     {
-      name: "Films",
-      link: "/films",
+      name: "Movies",
+      link: "/movies",
     },
     {
       name: "Books",

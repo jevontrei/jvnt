@@ -32,8 +32,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar />
+
+        <h1 className="text-6xl">JVNT</h1>
+
         {children}
+
         <Toaster position="top-left" richColors />
+
+        <footer>&copy; JVT 2026</footer>
+
+        {/* TODO: add github icon */}
       </body>
     </html>
   );

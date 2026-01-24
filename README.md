@@ -12,6 +12,10 @@ Stack:
 - Emails: nodemailer
 - Auth: better auth
 - Deployment: Vercel (then switch to AWS later?)
+- APIs:
+  - TMBD (movies)
+  - Up (banking)
+  - Music?
 
 TODO:
 

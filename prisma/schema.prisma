@@ -20,11 +20,12 @@ model Movie {
   updatedAt DateTime @updatedAt
 
   title   String
-  content String
-  watched Boolean
+  // year    Int
+  content String?
+  watched Boolean?
 
-  userId String
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // userId String
+  // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("movies")
 }
@@ -41,7 +42,7 @@ model User {
 
   sessions Session[]
   accounts Account[]
-  movies   Movie[]
+  // movies   Movie[]
 
   @@map("users")
 }
