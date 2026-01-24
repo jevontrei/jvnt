@@ -6,4 +6,4 @@ const authClient = createAuthClient({
 });
 
 // named export -- must import with exact name
-export const { signUp } = authClient;
+export const { signUp, signOut, signIn } = authClient;
