@@ -9,6 +9,14 @@ export default function NavBar() {
       link: "/",
     },
     {
+      name: "Login",
+      link: "/auth/login",
+    },
+    {
+      name: "Register",
+      link: "/auth/register",
+    },
+    {
       name: "Profile",
       link: "/profile",
     },

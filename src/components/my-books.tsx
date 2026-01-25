@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
-import { Movie } from "@/generated/prisma/client";
-import { QueryMoviesDbAction } from "@/actions/query-movies-db-action";
+import { Book } from "@/generated/prisma/client";
+import { QueryBooksDbAction } from "@/actions/query-books-db-action";
 import { ToggleWatchedStatusAction } from "@/actions/toggle-watched-status-action";
 
-export default function MyMovies() {
-  const [myMovies, setMyMovies] = useState<Movie[] | null>(null);
+export default function MyBooks() {
+  const [myBooks, setMyBooks] = useState<Book[] | null>(null);
   const [dbIsEmpty, setDbIsEmpty] = useState(false);
   const [isPending, setIsPending] = useState(false);
 
@@ -18,10 +18,10 @@ export default function MyMovies() {
 
     try {
       toast.info("Thinking...");
-      const { error, data } = await QueryMoviesDbAction();
+      const { error, data } = await QueryBooksDbAction();
 
       if (error) {
-        console.log("[search-movies-action] Failed to fetch movies:", error);
+        console.log("[search-books-action] Failed to fetch books:", error);
         toast.error(error);
         return;
       }
@@ -34,10 +34,10 @@ export default function MyMovies() {
 
       // only runs if no error
       toast.success("Hell yeah!");
-      // TODO: this still doesn't trigger a re-render of the table... when i search a movie, my db does get updated, but the "my movies" table doesn't unless i click "see what's in my db" again
-      setMyMovies(data);
+      // TODO: this still doesn't trigger a re-render of the table... when i search a book, my db does get updated, but the "my books" table doesn't unless i click "see what's in my db" again
+      setMyBooks(data);
     } catch (err) {
-      console.log("Error from my-movies.tsx:", err);
+      console.log("Error from my-books.tsx:", err);
       toast.error(`Network error: ${err}`);
     } finally {
       // always re-enable button
@@ -45,18 +45,18 @@ export default function MyMovies() {
     }
   }
 
-  async function handleClick(movieId: string) {
+  async function handleClick(bookId: string) {
     // note: we don't need evt or evt.preventDefault() here because handleClick is not coming from a form element or link click -- so there's no reload to prevent
     setIsPending(true);
 
     try {
       toast.info("Thinking...");
 
-      const { error, data } = await ToggleWatchedStatusAction(movieId);
+      const { error, data } = await ToggleWatchedStatusAction(bookId);
 
       if (error) {
         console.log(
-          "[toggle-watched-status-action] Failed to fetch movies or toggle status:",
+          "[toggle-watched-status-action] Failed to fetch books or toggle status:",
           error,
         );
         toast.error(error);
@@ -72,14 +72,14 @@ export default function MyMovies() {
       // only runs if no error
       toast.success("Hell yeah!");
 
-      //  update myMovies with data
-      if (!myMovies) return; // early return just to satisfy ts (myMovies won't be null here because of {myMovies && ...} below)
-      const updatedMyMovies = myMovies.map((movie) =>
-        movie.id === data.id ? data : movie,
+      //  update myBooks with data
+      if (!myBooks) return; // early return just to satisfy ts (myBooks won't be null here because of {myBooks && ...} below)
+      const updatedMyBooks = myBooks.map((book) =>
+        book.id === data.id ? data : book,
       );
-      setMyMovies(updatedMyMovies);
+      setMyBooks(updatedMyBooks);
     } catch (err) {
-      console.log("Error from my-movies.tsx:", err);
+      console.log("Error from my-books.tsx:", err);
       toast.error(`Network error: ${err}`);
     } finally {
       // always re-enable button
@@ -95,11 +95,11 @@ export default function MyMovies() {
 
       {dbIsEmpty && (
         <div>
-          Looks like the db is empty! Better go fetch some bloody movies!
+          Looks like the db is empty! Better go fetch some bloody books!
         </div>
       )}
 
-      {myMovies && (
+      {myBooks && (
         <div className="mt-8 max-h-96 overflow-y-auto border rounded">
           <table className="w-full">
             <thead className="sticky top-0 bg-gray-100">
@@ -111,18 +111,18 @@ export default function MyMovies() {
               </tr>
             </thead>
             <tbody>
-              {myMovies.map((movie) => (
-                <tr key={movie.id}>
-                  <td>{movie.title}</td>
-                  <td>{movie.watched ? <span>Watched</span> : null}</td>
+              {myBooks.map((book) => (
+                <tr key={book.id}>
+                  <td>{book.title}</td>
+                  <td>{book.watched ? <span>Watched</span> : null}</td>
                   <td>
                     <Button
                       // don't need type="submit" here, that's only for forms
                       className="w-sm"
                       disabled={isPending}
-                      onClick={() => handleClick(movie.id)}
+                      onClick={() => handleClick(book.id)}
                     >
-                      {movie.watched ? (
+                      {book.watched ? (
                         <span>Mark as unwatched</span>
                       ) : (
                         <span>Mark as watched</span>
@@ -133,7 +133,7 @@ export default function MyMovies() {
                     <Button
                       className="w-sm"
                       disabled={isPending}
-                      onClick={() => handleClick(movie.id)}
+                      onClick={() => handleClick(book.id)}
                     >
                       Delete
                     </Button>

@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 // define types for the return value of this action; to prevent annoying typescript complaints in search-forecast-form.tsx
 // type export -- must import with exact name
 // TODO: don't do this; just grab the schema's type that already exists
-export type MovieDataType = {
+export type BookDataType = {
   title: string;
   watched: boolean;
   //   year: number;
@@ -16,7 +16,7 @@ export type MovieDataType = {
 // i find this pattern of types very cool... much better than what i had before, e.g. `error: string | null`
 type ActionSuccessType = {
   error: null;
-  data: MovieDataType;
+  data: BookDataType;
 };
 
 type ActionErrorType = {
@@ -30,7 +30,7 @@ type ActionResultType = ActionSuccessType | ActionErrorType;
 // TODO: handle when user enters crazy string -> timeout
 
 // Promise here is a generic type; <ActionResultType> is a generic type argument
-export async function SearchMoviesAction(
+export async function SearchBooksAction(
   formData: FormData,
 ): Promise<ActionResultType> {
   try {
@@ -48,9 +48,9 @@ export async function SearchMoviesAction(
     }
 
     // make API request
-    // https://developer.themoviedb.org/reference/search-movie
-    const titleForUrl = encodeURIComponent(title); // this changes spaces to %20 etc
-    const url = `https://api.themoviedb.org/3/search/movie?query=${titleForUrl}&include_adult=false&language=en-US&page=1`;
+    // https://developers.google.com/books/docs/v1/reference/volumes/get
+    const volumeIdForUrl = encodeURIComponent(title); // this changes spaces to %20 etc
+    const url = `https://www.googleapis.com/books/v1/volumes/${volumeIdForUrl}`;
     const options = {
       method: "GET",
       headers: {
@@ -66,17 +66,17 @@ export async function SearchMoviesAction(
     // console.log(json);
     // console.log(result["title"]);
 
-    const movie: MovieDataType = {
+    const book: BookDataType = {
       title: result["title"],
       watched: result["watched"],
     };
-    console.log("movie:", movie);
+    console.log("book:", book);
 
-    // add movie to db
-    await prisma.movie.create({ data: movie });
+    // add book to db
+    await prisma.book.create({ data: book });
 
     // // return data to browser
-    return { error: null, data: movie };
+    return { error: null, data: book };
   } catch (err) {
     console.log(err);
 

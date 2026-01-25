@@ -8,15 +8,18 @@ My own corner of the internet. For anything and everythin, but mainly to learn.
 Stack:
 - Framework: next.js
 - ORM: prisma
-- Database: postgres (via neon)
+- Database:
+  - postgres (neon)
+  - postgres (Marko's NAS)
 - Emails: nodemailer
 - Auth: better auth
 - Deployment: Vercel (then switch to AWS later?)
 - APIs:
-  - TMDb (movies)
-  - Up (banking)
-  - Music?
-  - Nominatim (geo)
+  - Movies: TMDb
+  - Books: Google Books API
+  - Banking: Up
+  - Music: Spotify Web API or iTunes Search API
+  - Geocoding: Nominatim
 
 TODO:
 

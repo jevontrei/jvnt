@@ -30,6 +30,22 @@ model Movie {
   @@map("movies")
 }
 
+model Book {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title   String
+  // year    Int
+  content String?
+  read    Boolean @default(false)
+
+  // userId String
+  // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("books")
+}
+
 model User {
   id        String   @id
   createdAt DateTime @default(now())
