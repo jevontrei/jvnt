@@ -21,15 +21,15 @@ export default function SearchMoviesForm() {
     setIsPending(true);
 
     try {
-      toast.info("Thinking...");
+      toast.info("Connecting to TMDb API...");
       const formData = new FormData(evt.target as HTMLFormElement);
       const { error, data } = await SearchMoviesAction(formData);
       if (error) {
         toast.error(error);
         return;
       }
-      // only runs if no irrer
-      toast.success("Hell yeah!");
+      // only runs if no errer
+      toast.success("Movie added to database.");
       setMovieResults(data);
     } catch (err) {
       if (err instanceof TypeError) {
@@ -44,30 +44,35 @@ export default function SearchMoviesForm() {
   }
 
   return (
-    <div className="p-8">
-      {movieResults && (
-        <div className="mt-8 max-h-96 overflow-y-auto border rounded">
-          <p>Result:</p>
-          {movieResults.title}
-        </div>
-      )}
+    <div className="mt-6 mx-4">
+      <div className="p-8 flex flex-col items-center">
+        <form onSubmit={handleSubmit} className="w-64 space-y-2">
+          <div className="space-2">
+            <Label htmlFor="title" className="p-2 flex justify-center">
+              Request I watch a movie
+            </Label>
+            <Input id="title" name="title" placeholder="jaws" />
+          </div>
 
-      <form onSubmit={handleSubmit} className="max-w-sm w-full space-y-4">
-        <div className="space-y-2">
-          <Label htmlFor="title">Movie title search</Label>
-          <Input id="title" name="title" />
-        </div>
+          {/* <div className="space-y-2"> */}
+          {/* TODO: make this a radio button or dropdown, with watched/unwatched */}
+          {/* <Label htmlFor="watched">Watch status</Label> */}
+          {/* <Input id="watched" name="watched" /> */}
+          {/* </div> */}
 
-        {/* <div className="space-y-2"> */}
-        {/* TODO: make this a radio button or dropdown, with watched/unwatched */}
-        {/* <Label htmlFor="watched">Watch status</Label> */}
-        {/* <Input id="watched" name="watched" /> */}
-        {/* </div> */}
+          <Button type="submit" className="w-64" disabled={isPending}>
+            Search
+          </Button>
+        </form>
 
-        <Button type="submit" className="w-full" disabled={isPending}>
-          Search
-        </Button>
-      </form>
+        {movieResults && (
+          <div className="px-4 py-2 my-2 overflow-y-auto bg-purple-100 rounded-md">
+            <span>
+              Found movie title: <strong>{movieResults.title}</strong>
+            </span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

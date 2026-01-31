@@ -1,4 +1,4 @@
-import { PrismaClient } from "@/generated/prisma/client";
+import { PrismaClient } from "@/generated/prisma/client"; // "client" = Prisma's library name, not client-side code (works on server too)
 import { PrismaPg } from "@prisma/adapter-pg";
 import pg from "pg";
 
@@ -7,7 +7,7 @@ const globalForPrisma = global as unknown as {
 };
 
 const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.NEON_DATABASE_URL,
 });
 
 // DAYUM! i was initially following this: https://www.prisma.io/docs/orm/more/help-and-troubleshooting/nextjs-help
@@ -17,6 +17,7 @@ const pool = new pg.Pool({
 const adapter = new PrismaPg(pool);
 
 // named export -- must import with exact name
+// ?? is the nullish coalescing operator
 // ?? returns the first defined (non-nullish) value, while || returns the first truthy value
 export const prisma = globalForPrisma.prisma ?? new PrismaClient({ adapter });
 

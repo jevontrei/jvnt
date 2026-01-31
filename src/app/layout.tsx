@@ -31,17 +31,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar />
+        {/* could try using items-center-safe safe here */}
+        <div className="p-1 flex-col items-center-safe justify-center">
+          {/* <h1 className="text-6xl mt-6 mx-4 flex justify-center">JVNT</h1> */}
 
-        <h1 className="text-6xl p-8">JVNT</h1>
+          <NavBar />
 
-        {children}
+          {/* TODO: map page names to header divs */}
+          {/* {} */}
 
-        <Toaster position="top-left" richColors />
+          {children}
 
-        <footer className="p-8">&copy; JVT 2026</footer>
+          <Toaster position="top-left" richColors />
 
-        {/* TODO: add github icon */}
+          <footer className="p-10 text-sm flex justify-center">
+            &copy; JVT 2026
+          </footer>
+
+          {/* TODO: add github icon */}
+        </div>
       </body>
     </html>
   );

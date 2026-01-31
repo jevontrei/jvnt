@@ -1,6 +1,6 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { prisma } from "@/lib/prisma";
+import { prisma } from "@/lib/prisma-neon";
 
 // note: better auth automatically signs you in on registration, unless you have email verification on, in which case you can optionally set autoSignInAfterVerification: true
 

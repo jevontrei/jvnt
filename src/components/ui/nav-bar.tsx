@@ -8,34 +8,46 @@ export default function NavBar() {
       name: "Home",
       link: "/",
     },
-    {
-      name: "Profile",
-      link: "/profile",
-    },
+    // {
+    //   name: "Login",
+    //   link: "/auth/login",
+    // },
+    // {
+    //   name: "Register",
+    //   link: "/auth/register",
+    // },
+    // {
+    //   name: "Profile",
+    //   link: "/profile",
+    // },
     {
       name: "Movies",
       link: "/movies",
     },
-    {
-      name: "Books",
-      link: "/books",
-    },
-    {
-      name: "Music",
-      link: "/music",
-    },
-    {
-      name: "Up",
-      link: "/up",
-    },
+    // {
+    //   name: "Books",
+    //   link: "/books",
+    // },
+    // {
+    //   name: "Music",
+    //   link: "/music",
+    // },
+    // {
+    //   name: "Blog",
+    //   link: "/blog",
+    // },
+    // {
+    //   name: "Up",
+    //   link: "/up",
+    // },
   ];
 
   return (
-    <div className="p-8">
+    <div className="my-6 mx-4 flex justify-center-safe flex-wrap">
       {navItems.map((navItem, i) => {
         return (
           // TODO: fix this tw
-          <Button key={i} className="gap-4">
+          <Button key={i} className="m-1">
             <Link href={navItem.link}>{navItem.name}</Link>
           </Button>
         );

@@ -4,6 +4,8 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+// https://www.prisma.io/docs/orm/reference/prisma-schema-reference#model-field-scalar-types
+
 generator client {
   provider = "prisma-client"
   // can't use @/ here; must use ../src/
@@ -19,15 +21,33 @@ model Movie {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  title   String
-  // year    Int
-  content String?
-  watched Boolean @default(false)
+  title        String
+  release_date String?
+  vote_average Float?
+  watched      Boolean? @default(false)
+  liked        Boolean? @default(false)
 
   // userId String
   // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  // enforce unique movies by (title AND release_date)
+  @@unique([title, release_date], name: "movieIdentifier")
   @@map("movies")
+}
+
+model Book {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title String
+  // year    Int
+  read  Boolean @default(false)
+
+  // userId String
+  // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("books")
 }
 
 model User {

@@ -1,23 +1,31 @@
 
 # JVNT
 
-https://jvnt.vercel.app/
+https://joelvt.dev/
 
-My own corner of the internet. For anything and everythin, but mainly to learn.
+My own corner of the internet. For anything and everything, but mainly to learn.
 
-Stack:
+## Stack
+
 - Framework: next.js
 - ORM: prisma
-- Database: postgres (via neon)
+- Database:
+  - postgres (neon)
+  - postgres (Marko's NAS)
 - Emails: nodemailer
 - Auth: better auth
 - Deployment: Vercel (then switch to AWS later?)
 - APIs:
-  - TMBD (movies)
-  - Up (banking)
-  - Music?
+  - Movies: TMDb
+  - Books: Google Books API
+  - Banking: Up
+  - Music: Spotify Web API or iTunes Search API
+  - Geocoding: Nominatim
+  - Discord
+- Other bits:
+  - Components: shadcn
 
-TODO:
+## TODO
 
 - movies i've watched (api)
   - with a button for people to request I watch a movie
@@ -26,7 +34,7 @@ TODO:
 - auth
   - anyone can login and message (msg me or msg any user?)
   - a zone for just jess and i
-    - Up API + budget
+    - Up API / budget / frollo
   - "The Crew" 
     - family-only login with events dashboard, family info etc
 - resume
@@ -46,11 +54,12 @@ TODO:
     - BMX
     - Bus driving
     - QUT / research
+    - obsidian
   - photos
   - music
   - 
 
-__Commands__:
+## Commands
 
 ```sh
 # get started
@@ -64,6 +73,10 @@ npm i prisma --save-dev
 npm i @prisma/adapter-pg
 npm i @prisma/client
 npm i --save-dev @types/pg
+npm i --save-dev @types/nodemailer
+npm i @node-rs/argon2
+npm i nodemailer
+npm i react-tooltip
 
 # db operations
 npx prisma init

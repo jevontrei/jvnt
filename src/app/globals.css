@@ -123,3 +123,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+th {
+  @apply py-2;
+  @apply px-4;
+}
+
+td {
+  @apply py-2;
+  @apply px-4;
+}

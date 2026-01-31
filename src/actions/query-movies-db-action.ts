@@ -1,7 +1,8 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
-import { Movie } from "@/generated/prisma/client";
+import { prisma } from "@/lib/prisma-neon";
+import { Movie } from "@/generated/prisma/client"; // "client" = Prisma's library name, not client-side code (works on server too)
+import { notifyDiscord } from "./notify-discord-action";
 
 type DbQuerySuccessType = {
   error: null;
@@ -18,7 +19,8 @@ type DbQueryType = DbQuerySuccessType | DbQueryErrorType;
 export async function QueryMoviesDbAction(): Promise<DbQueryType> {
   try {
     const dbResponse = await prisma.movie.findMany();
-    console.log("dbResponse:", dbResponse);
+
+    await notifyDiscord(`Movies db queried: ${dbResponse.length} movies found`);
 
     // return data to browser
     return {
