@@ -49,3 +49,6 @@ next-env.d.ts
 /Users/joelvontreifeldt/repos/jvnt/src/app/up
 /Users/joelvontreifeldt/repos/jvnt/src/app/up/*
 /Users/joelvontreifeldt/repos/jvnt/src/app/up/page.tsx
+
+# to get builds to work while pages are WIP
+_archive/
