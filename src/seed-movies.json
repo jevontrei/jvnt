@@ -1,0 +1,643 @@
+[
+    {
+        "title": "mother",
+        "rating": 4
+    },
+    {
+        "title": "the invitation",
+        "rating": 6
+    },
+    {
+        "title": "the fountain",
+        "rating": 5
+    },
+    {
+        "title": "Frankenstein",
+        "rating": 6
+    },
+    {
+        "title": "grind",
+        "rating": 5
+    },
+    {
+        "title": "Dog day afternoon",
+        "rating": 5
+    },
+    {
+        "title": "About time",
+        "rating": 5
+    },
+    {
+        "title": "Moneyball",
+        "rating": 6
+    },
+    {
+        "title": "Ad Astra",
+        "rating": 5
+    },
+    {
+        "title": "The fall",
+        "rating": 4
+    },
+    {
+        "title": "Jojo rabbit",
+        "rating": 5
+    },
+    {
+        "title": "The mist",
+        "rating": 5
+    },
+    {
+        "title": "Inglorious Basterds",
+        "rating": 6
+    },
+    {
+        "title": "Django unchained",
+        "rating": 6
+    },
+    {
+        "title": "Pulp fiction",
+        "rating": 6
+    },
+    {
+        "title": "the man from earth",
+        "rating": 6
+    },
+    {
+        "title": "se7en",
+        "rating": 5
+    },
+    {
+        "title": "a beautiful mind",
+        "rating": 6
+    },
+    {
+        "title": "enemy",
+        "rating": 5
+    },
+    {
+        "title": "her",
+        "rating": 6
+    },
+    {
+        "title": "mandy",
+        "rating": 6
+    },
+    {
+        "title": "the endless",
+        "rating": 5
+    },
+    {
+        "title": "district 9",
+        "rating": 6
+    },
+    {
+        "title": "a clockwork orange",
+        "rating": 6
+    },
+    {
+        "title": "goodfellas",
+        "rating": 6
+    },
+    {
+        "title": "casino",
+        "rating": 6
+    },
+    {
+        "title": "raging bull",
+        "rating": 6
+    },
+    {
+        "title": "taxi driver",
+        "rating": 6
+    },
+    {
+        "title": "shutter island",
+        "rating": 6
+    },
+    {
+        "title": "inception",
+        "rating": 6
+    },
+    {
+        "title": "interstellar",
+        "rating": 6
+    },
+    {
+        "title": "everything everywhere all at once",
+        "rating": 7
+    },
+    {
+        "title": "get out",
+        "rating": 7
+    },
+    {
+        "title": "leave the world behind",
+        "rating": 6
+    },
+    {
+        "title": "the godfather",
+        "rating": 6
+    },
+    {
+        "title": "the godfather 2",
+        "rating": 6
+    },
+    {
+        "title": "primer",
+        "rating": 6
+    },
+    {
+        "title": "predestination",
+        "rating": 5
+    },
+    {
+        "title": "annihilation",
+        "rating": 6
+    },
+    {
+        "title": "nightcrawler",
+        "rating": 6
+    },
+    {
+        "title": "no country for old men",
+        "rating": 6
+    },
+    {
+        "title": "children of men",
+        "rating": 6
+    },
+    {
+        "title": "upstream colour",
+        "rating": 4
+    },
+    {
+        "title": "The lobster",
+        "rating": 6
+    },
+    {
+        "title": "after yang",
+        "rating": 5
+    },
+    {
+        "title": "i robot",
+        "rating": 5
+    },
+    {
+        "title": "contact",
+        "rating": 6
+    },
+    {
+        "title": "arrival",
+        "rating": 6
+    },
+    {
+        "title": "source code",
+        "rating": 4
+    },
+    {
+        "title": "whiplash",
+        "rating": 6
+    },
+    {
+        "title": "parasite",
+        "rating": 6
+    },
+    {
+        "title": "okja",
+        "rating": 6
+    },
+    {
+        "title": "the lobster",
+        "rating": 6
+    },
+    {
+        "title": "maniac",
+        "rating": 6
+    },
+    {
+        "title": "a stitch in time",
+        "rating": 4
+    },
+    {
+        "title": "beau is afraid",
+        "rating": 2
+    },
+    {
+        "title": "synecdoche new york",
+        "rating": 1
+    },
+    {
+        "title": "the woman in cabin 10",
+        "rating": 4
+    },
+    {
+        "title": "one battle after another",
+        "rating": 7
+    },
+    {
+        "title": "wicked",
+        "rating": 6
+    },
+    {
+        "title": "Wicked 2",
+        "rating": 5
+    },
+    {
+        "title": "paprika",
+        "rating": 5
+    },
+    {
+        "title": "ready player one",
+        "rating": 4
+    },
+    {
+        "title": "jiro dreams of sushi",
+        "rating": 5
+    },
+    {
+        "title": "blackfish",
+        "rating": 5
+    },
+    {
+        "title": "bank of dave",
+        "rating": 5
+    },
+    {
+        "title": "yesterday",
+        "rating": 4
+    },
+    {
+        "title": "the wild robot",
+        "rating": 5
+    },
+    {
+        "title": "fury road",
+        "rating": 4
+    },
+    {
+        "title": "dead poets society",
+        "rating": 6
+    },
+    {
+        "title": "shrek",
+        "rating": 5
+    },
+    {
+        "title": "unbreakable",
+        "rating": 6
+    },
+    {
+        "title": "split",
+        "rating": 5
+    },
+    {
+        "title": "glass",
+        "rating": 5
+    },
+    {
+        "title": "Signs",
+        "rating": 6
+    },
+    {
+        "title": "Everything Everywhere All At Once",
+        "rating": 7
+    },
+    {
+        "title": "minari",
+        "rating": 5
+    },
+    {
+        "title": "moonlight",
+        "rating": 6
+    },
+    {
+        "title": "the dry",
+        "rating": 6
+    },
+    {
+        "title": "nosferatu",
+        "rating": 6
+    },
+    {
+        "title": "captain fantastic",
+        "rating": 6
+    },
+    {
+        "title": "blade runner",
+        "rating": 5
+    },
+    {
+        "title": "blade runner 2049",
+        "rating": 6
+    },
+    {
+        "title": "the substance",
+        "rating": 5
+    },
+    {
+        "title": "the matrix",
+        "rating": 6
+    },
+    {
+        "title": "the gorge",
+        "rating": 4
+    },
+    {
+        "title": "dune 2",
+        "rating": 6
+    },
+    {
+        "title": "mickey 17",
+        "rating": 5
+    },
+    {
+        "title": "Oppenheimer",
+        "rating": 4
+    },
+    {
+        "title": "snowpiercer",
+        "rating": 5
+    },
+    {
+        "title": "the kitchen",
+        "rating": 5
+    },
+    {
+        "title": "the beautiful game",
+        "rating": 5
+    },
+    {
+        "title": "the power of the dog",
+        "rating": 5
+    },
+    {
+        "title": "October sky",
+        "rating": 5
+    },
+    {
+        "title": "The Brutalist",
+        "rating": 7
+    },
+    {
+        "title": "Sinners",
+        "rating": 6
+    },
+    {
+        "title": "Killers of the flower moon",
+        "rating": 5
+    },
+    {
+        "title": "Bring her back",
+        "rating": 5
+    },
+    {
+        "title": "Soul",
+        "rating": 6
+    },
+    {
+        "title": "Leo",
+        "rating": 4
+    },
+    {
+        "title": "The castle",
+        "rating": 5
+    },
+    {
+        "title": "Ex machina",
+        "rating": 6
+    },
+    {
+        "title": "Frances ha",
+        "rating": 5
+    },
+    {
+        "title": "Companion",
+        "rating": 5
+    },
+    {
+        "title": "Beetle juice",
+        "rating": 5
+    },
+    {
+        "title": "Beetlejuice 2",
+        "rating": 5
+    },
+    {
+        "title": "Jumanji",
+        "rating": 6
+    },
+    {
+        "title": "Jumanji 2",
+        "rating": 6
+    },
+    {
+        "title": "Jumanji 3",
+        "rating": 5
+    },
+    {
+        "title": "Jurassic park",
+        "rating": 5
+    },
+    {
+        "title": "Jurassic park 4",
+        "rating": 4
+    },
+    {
+        "title": "Jurassic park 8",
+        "rating": 4
+    },
+    {
+        "title": "The fast and the furious",
+        "rating": 4
+    },
+    {
+        "title": "Divine Love",
+        "rating": 6
+    },
+    {
+        "title": "They cloned Tyrone",
+        "rating": 5
+    },
+    {
+        "title": "The whale",
+        "rating": 6
+    },
+    {
+        "title": "Monsters inc",
+        "rating": 5
+    },
+    {
+        "title": "princess mononoke",
+        "rating": 6
+    },
+    {
+        "title": "Totoro",
+        "rating": 6
+    },
+    {
+        "title": "Spirited away",
+        "rating": 6
+    },
+    {
+        "title": "The castle in the sky",
+        "rating": 6
+    },
+    {
+        "title": "Kiki's delivery service",
+        "rating": 5
+    },
+    {
+        "title": "Triangle of sadness",
+        "rating": 5
+    },
+    {
+        "title": "The favourite",
+        "rating": 5
+    },
+    {
+        "title": "Anatomy of a fall",
+        "rating": 5
+    },
+    {
+        "title": "Saltburn",
+        "rating": 5
+    },
+    {
+        "title": "Poor things",
+        "rating": 6
+    },
+    {
+        "title": "Phantom thread",
+        "rating": 5
+    },
+    {
+        "title": "passenger",
+        "rating": 5
+    },
+    {
+        "title": "deadpool",
+        "rating": 6
+    },
+    {
+        "title": "deadpool & wolverine",
+        "rating": 4
+    },
+    {
+        "title": "Marcel the Shell with Shoes On",
+        "rating": 5
+    },
+    {
+        "rating": 5
+    },
+    {
+        "title": "memento",
+        "rating": 6
+    },
+    {
+        "title": "big fish",
+        "rating": 6
+    },
+    {
+        "title": "uglies",
+        "rating": 3
+    },
+    {
+        "title": "bugonia",
+        "rating": 6
+    },
+    {
+        "title": "Nausicaa",
+        "rating": 5
+    },
+    {
+        "title": "ghost in the shell 1995",
+        "rating": 5
+    },
+    {
+        "title": "greenland",
+        "rating": 5
+    },
+    {
+        "title": "paterson",
+        "rating": 4
+    },
+    {
+        "rating": 6
+    },
+    {
+        "title": "The Worst Person in the World",
+        "rating": 6
+    },
+    {
+        "title": "coherence",
+        "rating": 6
+    },
+    {
+        "title": "Zootopia",
+        "rating": 5
+    },
+    {
+        "title": "Zootopia 2",
+        "rating": 5
+    },
+    {
+        "title": "Past lives",
+        "rating": 5
+    },
+    {
+        "title": "Sentimental value",
+        "rating": 6
+    },
+    {
+        "title": "A boy called Christmas",
+        "rating": 5
+    },
+    {
+        "title": "Klaus",
+        "rating": 6
+    },
+    {
+        "title": "The wonder",
+        "rating": 5
+    },
+    {
+        "title": "Knives out",
+        "rating": 5
+    },
+    {
+        "title": "Knives out 2",
+        "rating": 5
+    },
+    {
+        "title": "Knives out 3",
+        "rating": 5
+    },
+    {
+        "title": "A real pain",
+        "rating": 5
+    },
+    {
+        "rating": 5
+    },
+    {
+        "title": "Up",
+        "rating": 6
+    },
+    {
+        "title": "Avatar 3",
+        "rating": 5
+    },
+    {
+        "title": "Housekeeper",
+        "rating": 5
+    },
+    {
+        "title": "Marty supreme",
+        "rating": 7
+    },
+    {
+        "title": "the killing of a sacred deer",
+        "rating": 5
+    }
+]

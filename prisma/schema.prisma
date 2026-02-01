@@ -25,7 +25,8 @@ model Movie {
   release_date String?
   vote_average Float?
   watched      Boolean? @default(false)
-  liked        Boolean? @default(false)
+  // TODO: make rating null if watched is false
+  rating       Int?
 
   // userId String
   // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
