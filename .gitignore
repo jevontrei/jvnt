@@ -46,9 +46,9 @@ next-env.d.ts
 /src/generated/prisma
 
 # for now
-/Users/joelvontreifeldt/repos/jvnt/src/app/up
-/Users/joelvontreifeldt/repos/jvnt/src/app/up/*
-/Users/joelvontreifeldt/repos/jvnt/src/app/up/page.tsx
+/Users/joelvontreifeldt/repos/joelvt/src/app/up
+/Users/joelvontreifeldt/repos/joelvt/src/app/up/*
+/Users/joelvontreifeldt/repos/joelvt/src/app/up/page.tsx
 
 # to get builds to work while pages are WIP
 _archive/

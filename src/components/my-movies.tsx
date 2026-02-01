@@ -8,6 +8,7 @@ import { DeleteMovieAction } from "@/actions/delete-movie-action";
 import { QueryMoviesDbAction } from "@/actions/query-movies-db-action";
 import { ToggleWatchedStatusAction } from "@/actions/toggle-watched-status-action";
 import { SeedMoviesAction } from "@/actions/seed-movies-action";
+import { Database, Sprout, Trash2 } from "lucide-react";
 
 // we needed this Record<> type because object keys are usually strings
 const ratingColors: Record<number, string> = {
@@ -207,6 +208,7 @@ export default function MyMovies() {
       {/* {!dbIsEmpty && ( */}
       <form onSubmit={handleFetchSubmit} className="mb-0">
         <Button className="w-64" disabled={isPending}>
+          <Database />
           Fetch database
         </Button>
       </form>
@@ -226,6 +228,7 @@ export default function MyMovies() {
           <div className="flex flex-col items-center">
             <form onSubmit={handleSeedSubmit} className="mb-0">
               <Button className="w-64" disabled={isPending}>
+                <Sprout />
                 Seed database
               </Button>
             </form>
@@ -312,6 +315,7 @@ export default function MyMovies() {
                       disabled={isPending}
                       onClick={() => handleDeleteClick(movie.id)}
                     >
+                      <Trash2 />
                       Delete
                     </Button>
                   </td>
@@ -329,6 +333,7 @@ export default function MyMovies() {
           <p className="text-sm">And be goddamn patient, okay?</p>
           <form onSubmit={handleSeedSubmit} className="mb-0">
             <Button className="w-64" disabled={isPending}>
+              <Sprout />
               Seed database
             </Button>
           </form>

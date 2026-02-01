@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { useState } from "react";
 import { SearchMoviesAction } from "@/actions/search-movies-action";
 import { TmdbMovieDataType } from "@/actions/call-tmdb-api-action";
+import { Search } from "lucide-react";
 
 // https://developer.themoviedb.org/docs/rate-limiting
 
@@ -29,7 +30,7 @@ export default function SearchMoviesForm() {
         return;
       }
       // only runs if no errer
-      toast.success("Movie added to database.");
+      toast.success("Movie found and added to database.");
       setMovieResults(data);
     } catch (err) {
       if (err instanceof TypeError) {
@@ -47,7 +48,7 @@ export default function SearchMoviesForm() {
     <div className="mt-6 mx-4">
       <div className="p-8 flex flex-col items-center">
         <form onSubmit={handleSubmit} className="w-64 space-y-2">
-          <div className="space-2">
+          <div>
             <Label htmlFor="title" className="p-2 flex justify-center">
               Request that I watch a movie
             </Label>
@@ -61,6 +62,7 @@ export default function SearchMoviesForm() {
           {/* </div> */}
 
           <Button type="submit" className="w-64" disabled={isPending}>
+            <Search />
             Search
           </Button>
         </form>
@@ -68,6 +70,7 @@ export default function SearchMoviesForm() {
         {movieResults && (
           <div className="px-4 py-2 my-2 overflow-y-auto bg-purple-100 rounded-md">
             <span>
+              {/* TODO: include release_date here */}
               Found movie title: <strong>{movieResults.title}</strong>
             </span>
           </div>

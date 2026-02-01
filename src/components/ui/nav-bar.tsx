@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "./button";
+import { Camera, Clapperboard, House } from "lucide-react";
 
 // default export
 export default function NavBar() {
@@ -7,6 +8,7 @@ export default function NavBar() {
     {
       name: "Home",
       link: "/",
+      icon: <House />,
     },
     // {
     //   name: "Login",
@@ -23,10 +25,12 @@ export default function NavBar() {
     {
       name: "Movies",
       link: "/movies",
+      icon: <Clapperboard />,
     },
     {
       name: "Photons",
       link: "/photons",
+      icon: <Camera />,
     },
     // {
     //   name: "Books",
@@ -50,8 +54,8 @@ export default function NavBar() {
     <div className="my-6 mx-4 flex justify-center-safe flex-wrap">
       {navItems.map((navItem, i) => {
         return (
-          // TODO: fix this tw
           <Button key={i} className="m-1">
+            {navItem.icon}
             <Link href={navItem.link}>{navItem.name}</Link>
           </Button>
         );
