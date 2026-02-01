@@ -24,6 +24,10 @@ export default function NavBar() {
       name: "Movies",
       link: "/movies",
     },
+    {
+      name: "Photons",
+      link: "/photons",
+    },
     // {
     //   name: "Books",
     //   link: "/books",

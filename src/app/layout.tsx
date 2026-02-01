@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import NavBar from "@/components/ui/nav-bar";
+import Footer from "@/components/ui/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,11 +45,7 @@ export default function RootLayout({
 
           <Toaster position="top-left" richColors />
 
-          <footer className="p-10 text-sm flex justify-center">
-            &copy; JVT 2026
-          </footer>
-
-          {/* TODO: add github icon */}
+          <Footer />
         </div>
       </body>
     </html>

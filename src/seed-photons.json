@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "createdAt": "",
+        "updatedAt": "",
+        "title": "boxFace",
+        "description": "",
+        "s3_url": "https://joel-public-photos-etc.s3.ap-southeast-2.amazonaws.com/photos/boxFace.jpg",
+        "s3_key": "photos/boxFace.jpg",
+        "uploadedAt": "",
+        "display_order": 1
+    },
+    {
+        "id": 2,
+        "createdAt": "",
+        "updatedAt": "",
+        "title": "egret",
+        "description": "",
+        "s3_url": "https://joel-public-photos-etc.s3.ap-southeast-2.amazonaws.com/photos/egret.jpg",
+        "s3_key": "photos/egret.jpg",
+        "uploadedAt": "",
+        "display_order": 2
+    }
+]

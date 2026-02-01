@@ -36,6 +36,25 @@ model Movie {
   @@map("movies")
 }
 
+model Photo {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title         String?
+  description   String?
+  s3_url        String
+  s3_key        String
+  uploadedAt    DateTime @default(now())
+  display_order Int
+
+  // implement photo relations later, if at all
+  // userId String
+  // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("photos")
+}
+
 model Book {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())

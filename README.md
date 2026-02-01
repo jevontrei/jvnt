@@ -12,6 +12,7 @@ My own corner of the internet. For anything and everything, but mainly to learn.
 - Database:
   - postgres (neon)
   - postgres (Marko's NAS)
+- Storage: S3
 - Emails: nodemailer
 - Auth: better auth
 - Deployment: Vercel (then switch to AWS later?)
@@ -21,15 +22,13 @@ My own corner of the internet. For anything and everything, but mainly to learn.
   - Banking: Up
   - Music: Spotify Web API or iTunes Search API
   - Geocoding: Nominatim
-  - Discord
+  - Notes to self: Discord
 - Other bits:
   - Components: shadcn
 
 ## TODO
 
 - https://http.cat/
-- movies i've watched (api)
-  - with a button for people to request I watch a movie
 - books i've read (api)
   - with a button for people to request I read a book
 - auth
@@ -38,10 +37,11 @@ My own corner of the internet. For anything and everything, but mainly to learn.
     - Up API / budget / frollo
   - "The Crew" 
     - family-only login with events dashboard, family info etc
-- resume
-  - dynamic or static?
-- travel
-  - leaflet + photos
+- photons 
+  - add orientation to schema - landscape or portrait
+  - based around a central leaflet map
+  - click on the map to see photos at that place, like in google photos
+  - travel photos + general photos
 - later:
   - about
   - life story
@@ -56,7 +56,6 @@ My own corner of the internet. For anything and everything, but mainly to learn.
     - Bus driving
     - QUT / research
     - obsidian
-  - photos
   - music
   - 
 

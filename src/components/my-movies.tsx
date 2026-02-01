@@ -27,6 +27,7 @@ export default function MyMovies() {
   const [isPending, setIsPending] = useState(false);
 
   // TODO: let user sort movies by any column
+  // "useMemo is a React Hook that lets you cache the result of a calculation between re-renders"
   const sortedMovies = useMemo(() => {
     if (!myMovies) return null;
 
@@ -239,21 +240,29 @@ export default function MyMovies() {
               <tr>
                 <th className="text-left">Movie</th>
                 <th className="text-left">Has Joel watched?</th>
-                <th className="text-left">Joel&apos;s rating</th>
+                <th className="text-left">Joel&apos;s rating out of 7</th>
+                <th className="text-left">TMDb Rating out of 10</th>
                 {/* <th className="text-left">Added by</th> */}
                 <th className="text-left"></th>
               </tr>
             </thead>
             <tbody>
               {sortedMovies.map((movie) => (
+                // TODO: center buttons under table headings
                 <tr key={movie.id} className="even:bg-gray-50">
-                  <td>{movie.title}</td>
+                  <td
+                  // className="flex justify-center"
+                  >
+                    {movie.title}
+                  </td>
 
                   {/* TODO: add release_date (AND POSTER) to api call and db */}
                   {/* <td>{movie.release_date}</td> */}
 
                   {/* TODO: use tooltips (using react-tooltip) */}
-                  <td>
+                  <td
+                  // className="flex justify-center"
+                  >
                     <Button
                       className={`w-12 ${movie.watched ? "bg-transparent border text-black" : "bg-gray-400"} hover:bg-yellow-300 hover:text-black`}
                       disabled={isPending}
@@ -264,31 +273,39 @@ export default function MyMovies() {
                   </td>
 
                   <td
-                    className={`w-12 h-9 m-2 rounded-md text-sm text-white flex items-center justify-center ${movie.watched && movie.rating ? ratingColors[movie.rating] : "bg-transparent"}`}
+                    className={`
+                      // flex justify-center 
+                      w-12 h-9 m-2 rounded-md text-sm text-white ${movie.watched && movie.rating ? ratingColors[movie.rating] : "bg-transparent"}`}
                   >
                     <strong>{movie.watched && movie.rating}</strong>
                   </td>
 
-                  {/* 
-                  <td>
+                  <td
+                  // className="flex justify-center"
+                  >
                     <div
-                      className={`w-12 px-4 py-2 text-sm flex items-center justify-center text-primary-foreground rounded-md ${
-                        movie.vote_average
-                          ? movie.vote_average > 7.0
-                            ? "bg-purple-500"
-                            : "bg-gray-500"
-                          : "bg-transparent"
-                      }`}
+                      className={`w-12 px-4 py-2 text-sm flex items-center justify-center  text-black rounded-md`}
+                      //  ${
+                      // movie.vote_average
+                      // ? movie.vote_average > 7.0
+                      // ? "bg-purple-500"
+                      // : "bg-gray-500"
+                      // : "bg-transparent"
+                      // }
+                      // `}
                     >
                       <strong>{movie.vote_average?.toFixed(1)}</strong>
-                      </div> 
+                    </div>
                   </td>
-                  */}
 
                   {/* TODO */}
-                  {/* <td>movie.addedBy</td> */}
+                  {/* <td
+                  // className="flex justify-center"
+                  >movie.addedBy</td> */}
 
-                  <td>
+                  <td
+                  // className="w-full flex justify-center"
+                  >
                     {/* TODO: users can only delete movies they added */}
                     <Button
                       className="max-w-sm bg-red-200 hover:bg-destructive"
