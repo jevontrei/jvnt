@@ -2,19 +2,14 @@
 
 // do i even need to write "use server"?
 
-import { prisma } from "@/lib/prisma-neon";
 import { notifyDiscord } from "./notify-discord-action";
-import { Prisma } from "@/generated/prisma/client"; // "client" = Prisma's library name, not client-side code (works on server too)
 import { CallTmdbApiAction } from "./call-tmdb-api-action";
-import {
-  TmdbMovieDataType,
-  TmdbActionResultType,
-} from "./call-tmdb-api-action";
+import { TmdbActionResultType } from "./call-tmdb-api-action";
 
 // TODO: handle when user enters crazy string -> timeout
 
 // Promise here is a generic type; <ActionResultType> is a generic type argument
-export async function SearchMoviesAction(
+export async function FindMoviesAction(
   inputData: FormData,
 ): Promise<TmdbActionResultType> {
   try {
@@ -22,6 +17,7 @@ export async function SearchMoviesAction(
 
     // validate
     if (!title) {
+      // TODO: this is triggering... understand why and rewrite it
       console.log(">> Title error...");
       return {
         error: "Please enter your title",
@@ -36,29 +32,20 @@ export async function SearchMoviesAction(
       return { error: error, data: null };
     }
 
-    const movie: TmdbMovieDataType = {
-      title: data["title"],
-      release_date: data["release_date"],
-      vote_average: data["vote_average"],
-    };
+    const movies = data.map((movie) => ({
+      title: movie["title"],
+      release_date: movie["release_date"],
+      vote_average: movie["vote_average"],
+    }));
+    // console.log("movies: ", movies);
 
-    // add movie to db
-    await prisma.movie.create({ data: movie });
-
-    await notifyDiscord(`Movies API called and db updated: ${movie.title}`);
+    await notifyDiscord(`TMDb API called, found: ${data.length} movies`);
 
     // return data to browser
-    return { error: null, data: movie };
+    return { error: null, data: movies };
   } catch (err) {
-    if (err instanceof Prisma.PrismaClientKnownRequestError) {
-      // https://www.prisma.io/docs/orm/prisma-client/debugging-and-troubleshooting/handling-exceptions-and-errors
-      if (err.code === "P2002") {
-        return {
-          error: "That movie is already in my bleedin' database!",
-          data: null,
-        };
-      }
-    } else if (err instanceof Error) {
+    if (err instanceof Error) {
+      // TODO
       if (err.message.includes("...")) {
         return {
           error:

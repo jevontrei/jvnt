@@ -39,13 +39,14 @@ export async function SeedMoviesAction(): Promise<SeedActionResultType> {
       const result = await CallTmdbApiAction(movie.title);
       if (result.data) {
         movies.push({
-          title: result.data["title"],
-          release_date: result.data["release_date"],
-          vote_average: result.data["vote_average"],
+          // this just grabs the first result
+          title: result.data[0]["title"],
+          release_date: result.data[0]["release_date"],
+          vote_average: result.data[0]["vote_average"],
           // reunite my rating with the search results
           rating: movie.rating,
           // all seeded movies should have been watched and rated
-          watched: true,
+          watched: movie.watched,
         });
       } else {
         console.log(

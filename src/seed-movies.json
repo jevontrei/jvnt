@@ -1,643 +1,829 @@
 [
     {
         "title": "mother",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "the invitation",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the fountain",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Frankenstein",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "grind",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Dog day afternoon",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "About time",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Moneyball",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Ad Astra",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "The fall",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "Jojo rabbit",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "The mist",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Inglorious Basterds",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Django unchained",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Pulp fiction",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the man from earth",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "se7en",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "a beautiful mind",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "enemy",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "her",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "mandy",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the endless",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "district 9",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "a clockwork orange",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "goodfellas",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "casino",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "raging bull",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "taxi driver",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "shutter island",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "inception",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "interstellar",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "everything everywhere all at once",
-        "rating": 7
+        "rating": 7,
+        "watched": true
     },
     {
         "title": "get out",
-        "rating": 7
+        "rating": 7,
+        "watched": true
     },
     {
         "title": "leave the world behind",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the godfather",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the godfather 2",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "primer",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "predestination",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "annihilation",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "nightcrawler",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "no country for old men",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "children of men",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "upstream colour",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "The lobster",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "after yang",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "i robot",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "contact",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "arrival",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "source code",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "whiplash",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "parasite",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "okja",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the lobster",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "maniac",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "a stitch in time",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "beau is afraid",
-        "rating": 2
+        "rating": 2,
+        "watched": true
     },
     {
         "title": "synecdoche new york",
-        "rating": 1
+        "rating": 1,
+        "watched": true
     },
     {
         "title": "the woman in cabin 10",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "one battle after another",
-        "rating": 7
+        "rating": 7,
+        "watched": true
     },
     {
         "title": "wicked",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Wicked 2",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "paprika",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "ready player one",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "jiro dreams of sushi",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "blackfish",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "bank of dave",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "yesterday",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "the wild robot",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "fury road",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "dead poets society",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "shrek",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "unbreakable",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "split",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "glass",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Signs",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Everything Everywhere All At Once",
-        "rating": 7
+        "rating": 7,
+        "watched": true
     },
     {
         "title": "minari",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "moonlight",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the dry",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "nosferatu",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "captain fantastic",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "blade runner",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "blade runner 2049",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the substance",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "the matrix",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "the gorge",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "dune 2",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "mickey 17",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Oppenheimer",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "snowpiercer",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "the kitchen",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "the beautiful game",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "the power of the dog",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "October sky",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "The Brutalist",
-        "rating": 7
+        "rating": 7,
+        "watched": true
     },
     {
         "title": "Sinners",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Killers of the flower moon",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Bring her back",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Soul",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Leo",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "The castle",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Ex machina",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Frances ha",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Companion",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Beetle juice",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Beetlejuice 2",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Jumanji",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Jumanji 2",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Jumanji 3",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "Jurassic park",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Jurassic park 4",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "Jurassic park 8",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "The fast and the furious",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "Divine Love",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "They cloned Tyrone",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "The whale",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Monsters inc",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "princess mononoke",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Totoro",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Spirited away",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "The castle in the sky",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Kiki's delivery service",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Triangle of sadness",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "The favourite",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Anatomy of a fall",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Saltburn",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Poor things",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Phantom thread",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "passenger",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "deadpool",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "deadpool & wolverine",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
         "title": "Marcel the Shell with Shoes On",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "memento",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "big fish",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "uglies",
-        "rating": 3
+        "rating": 3,
+        "watched": true
     },
     {
         "title": "bugonia",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Nausicaa",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "ghost in the shell 1995",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "greenland",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "paterson",
-        "rating": 4
+        "rating": 4,
+        "watched": true
     },
     {
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "The Worst Person in the World",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "coherence",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Zootopia",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Zootopia 2",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Past lives",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Sentimental value",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "A boy called Christmas",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Klaus",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "The wonder",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Knives out",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Knives out 2",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Knives out 3",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "A real pain",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Up",
-        "rating": 6
+        "rating": 6,
+        "watched": true
     },
     {
         "title": "Avatar 3",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "the housemaid",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     },
     {
         "title": "Marty supreme",
-        "rating": 7
+        "rating": 7,
+        "watched": true
+    },
+    {
+        "title": "the lighthouse",
+        "rating": 6,
+        "watched": true
+    },
+    {
+        "title": "hamnet",
+        "rating": 0,
+        "watched": false
+    },
+    {
+        "title": "All of Us Strangers",
+        "rating": 0,
+        "watched": false
+    },
+    {
+        "title": "Nope",
+        "rating": 0,
+        "watched": true
+    },
+    {
+        "title": "Us",
+        "rating": 0,
+        "watched": true
     },
     {
         "title": "the killing of a sacred deer",
-        "rating": 5
+        "rating": 5,
+        "watched": true
     }
 ]

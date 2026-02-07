@@ -1,5 +1,6 @@
 "use client";
 
+import seedData from "@/seed-movies.json" assert { type: "json" };
 import { useMemo, useState } from "react";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
@@ -31,7 +32,7 @@ const ratingColors: Record<number, string> = {
 // make an array version (shallow copy) for mapping over below
 const ratingColorsArray = Object.entries(ratingColors).slice(1, 8);
 
-export default function MyMovies() {
+export default function MyMoviesDb() {
   const [myMovies, setMyMovies] = useState<Movie[] | null>(null);
   const [dbIsEmpty, setDbIsEmpty] = useState(false);
   const [isPending, setIsPending] = useState(false);
@@ -61,7 +62,7 @@ export default function MyMovies() {
       const { error, data } = await QueryMoviesDbAction();
 
       if (error) {
-        console.log("[search-movies-action] Failed to fetch movies:", error);
+        console.log("[query-movies-db-action] Failed to fetch movies:", error);
         toast.error(error);
         return;
       }
@@ -85,7 +86,7 @@ export default function MyMovies() {
     }
   }
 
-  async function handleSeedSubmit(evt: React.FormEvent<HTMLFormElement>) {
+  async function handleSeedDbSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
     setIsPending(true);
     try {
@@ -169,7 +170,7 @@ export default function MyMovies() {
     }
   }
 
-  async function handleDeleteClick(movieId: string) {
+  async function handleDeleteMovieClick(movieId: string) {
     setIsPending(true);
 
     try {
@@ -223,18 +224,19 @@ export default function MyMovies() {
               Better go seed the bloody database before fetching again, cobber!
             </p>
             <p>
-              And be goddamn patient, okay? It&apos;s just 30 frickin seconds
+              And be goddamn patient, okay? It&apos;s just 30 frickin seconds.
             </p>
           </div>
         </div>
       )}
 
       {sortedMovies && (
-        <div className="mt-2 max-h-96 overflow-x-auto overflow-y-auto border rounded">
+        <div className="mt-2 max-h-128 overflow-x-auto overflow-y-auto border rounded">
           <table className="w-full">
             <thead className="sticky top-0 bg-gray-200">
               <tr>
-                <th className="text-left">Movie</th>
+                <th className="text-left">Title</th>
+                <th className="text-center">Released</th>
                 <th className="text-center">Watched?</th>
                 <th className="text-center">Joel&apos;s rating</th>
                 <th className="text-center">TMDb rating</th>
@@ -251,7 +253,7 @@ export default function MyMovies() {
                   </td>
 
                   {/* TODO: add release_date (AND POSTER) to api call and db */}
-                  {/* <td>{movie.release_date}</td> */}
+                  <td>{movie.release_date}</td>
 
                   {/* TODO: use tooltips (using react-tooltip) */}
 
@@ -272,7 +274,8 @@ export default function MyMovies() {
                     </div>
                   </td>
 
-                  <td className="h-9 m-2 rounded-md text-sm flex items-center">
+                  {/* TODO: fix this height for overflowed rows */}
+                  <td className="h-full m-2 rounded-md text-sm flex items-center">
                     <div className="w-full">
                       {ratingColorsArray.map((color, i) => (
                         <span
@@ -320,7 +323,7 @@ export default function MyMovies() {
                         className="max-w-sm bg-destructive"
                         disabled={isPending}
                         size="sm"
-                        onClick={() => handleDeleteClick(movie.id)}
+                        onClick={() => handleDeleteMovieClick(movie.id)}
                       >
                         <Trash2 />
                       </Button>
@@ -333,30 +336,36 @@ export default function MyMovies() {
         </div>
       )}
 
+      {/* TODO: show db automatically on load */}
+      {/* TODO: fix logic for showing seed button when db is empty */}
       <form onSubmit={handleRefreshDbSubmit} className="mb-0">
         <Button className="w-64" disabled={isPending}>
           <Database />
-          Refresh database
+          {isPending ? "Thinking..." : "Refresh database"}
         </Button>
       </form>
 
-      {sortedMovies && sortedMovies.length < 100 && (
-        // TODO: add a db.length < 100 state and only show this msg then
-        <form
-          onSubmit={handleSeedSubmit}
-          className="mb-0 mt-12 space-y-2 flex flex-col items-center"
-        >
-          <p className="text-sm">Database looking empty?</p>
-          <p className="text-sm">Click the button to seed the stupid thing.</p>
-          <p className="text-sm">
-            And be goddamn patient, okay? It&apos;s just 30 seconds
-          </p>
-          <Button className="w-64" disabled={isPending}>
-            <Sprout />
-            Seed database
-          </Button>
-        </form>
-      )}
+      {/* {!dbIsEmpty ||
+        (sortedMovies && sortedMovies.length > seedData.length && ( */}
+      {/* // TODO: add a db.length < 100 state and only show this msg then */}
+      <form
+        onSubmit={handleSeedDbSubmit}
+        className="mb-0 mt-12 space-y-2 flex flex-col items-center"
+      >
+        <p className="text-sm">Database looking empty?</p>
+        <p className="text-sm">
+          Click the button below to seed the stupid thing.
+        </p>
+        <p className="text-sm">
+          And be goddamn patient, okay? It&apos;s just 30 seconds.
+        </p>
+        {/*  */}
+        <Button className="w-64" disabled={isPending}>
+          <Sprout />
+          {isPending ? "Thinking..." : "Seed database"}
+        </Button>
+      </form>
+      {/* ))} */}
     </div>
   );
 }
