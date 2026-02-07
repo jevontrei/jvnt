@@ -54,10 +54,12 @@ export default function NavBar() {
     <div className="my-6 mx-4 flex justify-center-safe flex-wrap">
       {navItems.map((navItem, i) => {
         return (
-          <Button key={i} className="m-1">
-            {navItem.icon}
-            <Link href={navItem.link}>{navItem.name}</Link>
-          </Button>
+          <Link key={i} href={navItem.link}>
+            <Button className="m-1 bg-white text-black border border-black">
+              {navItem.icon}
+              {navItem.name}
+            </Button>
+          </Link>
         );
       })}
     </div>

@@ -9,10 +9,11 @@ import { useState } from "react";
 import { AddOneMovieToDbAction } from "@/actions/add-one-movie-to-db-action";
 import { FindMoviesAction } from "@/actions/find-movies-action";
 import { TmdbMovieDataType } from "@/actions/call-tmdb-api-action";
+import { redirect } from "next/navigation";
 
 // https://developer.themoviedb.org/docs/rate-limiting
 
-export default function FindMoviesForm() {
+export default function RecommendMovieForm() {
   const [isPending, setIsPending] = useState(false);
   const [movieResults, setMovieResults] = useState<TmdbMovieDataType[] | null>(
     null,
@@ -30,11 +31,14 @@ export default function FindMoviesForm() {
         toast.error(error);
         return;
       }
+      if (!data) {
+        toast.error("Search data is empty");
+        return;
+      }
 
       // only runs if no error
-      // const { error: addMovieError, data: addMovieData } =
-      //   await handleAddMovieToDbSubmit(movie);
-      toast.success("Success!");
+      // TODO: do i need to do anything here?
+      toast.success(`Found ${data.length} movies`);
       setMovieResults(data);
     } catch (err) {
       if (err instanceof TypeError) {
@@ -72,17 +76,15 @@ export default function FindMoviesForm() {
     } finally {
       // ALWAYS re-enable button
       setIsPending(false);
+      redirect("/movies");
     }
   }
 
   return (
-    <div className="mt-6 mx-4">
+    <div className="m-4">
       <div className="p-8 flex flex-col items-center">
         <form onSubmit={handleSearchSubmit} className="w-64 space-y-2">
           <div>
-            <Label htmlFor="title" className="p-2 flex justify-center">
-              Find a movie for me to watch
-            </Label>
             <Input
               id="title"
               name="title"
@@ -96,31 +98,33 @@ export default function FindMoviesForm() {
           {/* <Input id="watched" name="watched" /> */}
           {/* </div> */}
 
-          <Button type="submit" className="w-64" disabled={isPending}>
+          <Button type="submit" className="w-64 " disabled={isPending}>
             <Search />
-            Find
+            Search
           </Button>
         </form>
 
         {movieResults && (
           <>
-            <div className="mt-6">
-              <p>Top search results from TMDb:</p>
-            </div>
-            <div className="my-2 overflow-x-auto overflow-y-auto border rounded flex flex-col items-center">
+            {/* <div className="mt-12">
+              <p>
+                <strong>Top results from TMDb</strong>
+              </p>
+            </div> */}
+            <div className="mt-8 overflow-x-auto overflow-y-auto border rounded flex flex-col items-center">
               <table className="w-full">
                 <thead className="sticky top-0 bg-gray-200">
                   <tr>
                     <th className="text-left">Title</th>
                     <th className="text-center">Release date</th>
-                    <th className="text-center">Vote average</th>
+                    <th className="text-center">TMDb rating</th>
                     <th className="text-center">Add to database?</th>
                   </tr>
                 </thead>
 
                 <tbody>
                   {movieResults.map((movie, i) => (
-                    <tr key={i}>
+                    <tr key={i} className="even:bg-gray-50">
                       <td>
                         <div className="w-64 flex justify-start overflow-auto">
                           {movie.title}
@@ -140,7 +144,7 @@ export default function FindMoviesForm() {
                         <div className="w-full flex justify-center">
                           {
                             <Button
-                              className="bg-blue-400"
+                              className="bg-blue-600"
                               onClick={() => handleAddMovieToDbSubmit(movie)}
                               disabled={isPending}
                             >

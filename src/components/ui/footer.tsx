@@ -27,7 +27,7 @@ export default function Footer() {
           className="hover:grayscale-50"
         >
           <Image
-            src="/linkedin-logo-svgrepo-com.svg"
+            src="/linkedin.svg"
             alt="LinkedIn logo"
             width={24}
             height={24}

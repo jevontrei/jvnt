@@ -1,7 +1,6 @@
 "use client";
 
-import seedData from "@/seed-movies.json" assert { type: "json" };
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
 import { Movie } from "@/generated/prisma/client";
@@ -9,13 +8,8 @@ import { DeleteMovieAction } from "@/actions/delete-movie-action";
 import { QueryMoviesDbAction } from "@/actions/query-movies-db-action";
 import { ToggleWatchedStatusAction } from "@/actions/toggle-watched-status-action";
 import { SeedMoviesAction } from "@/actions/seed-movies-action";
-import {
-  Database,
-  Sprout,
-  ToggleLeft,
-  ToggleRight,
-  Trash2,
-} from "lucide-react";
+import { Sprout, Trash2 } from "lucide-react";
+import Image from "next/image";
 
 // we needed this Record<> type because object keys are usually strings
 const ratingColors: Record<number, string> = {
@@ -53,38 +47,49 @@ export default function MyMoviesDb() {
     });
   }, [myMovies]);
 
-  async function handleRefreshDbSubmit(evt: React.FormEvent<HTMLFormElement>) {
-    evt.preventDefault();
+  // this loads the db on page load
+  useEffect(() => {
+    console.log(">> useEffect running");
     setIsPending(true);
 
-    try {
-      toast.info("Querying database...");
-      const { error, data } = await QueryMoviesDbAction();
+    // TODO: this toast shows twice (when i navigate here via the navbar)
+    toast.info("Querying database...");
 
-      if (error) {
-        console.log("[query-movies-db-action] Failed to fetch movies:", error);
-        toast.error(error);
-        return;
+    // can't use await directly inside useEffect(), so we create an async fn INSIDE useEffect()
+    const callDbQueryer = async () => {
+      try {
+        const { error, data } = await QueryMoviesDbAction();
+
+        if (error) {
+          console.log(
+            "[query-movies-db-action] Failed to fetch movies:",
+            error,
+          );
+          toast.error(error);
+          return;
+        }
+        if (!data || data.length === 0) {
+          setDbIsEmpty(true);
+          toast.info("Database is empty!");
+          return;
+        }
+        // TODO: this still doesn't trigger a re-render of the table... when i search a movie, my db does get updated, but the "my movies" table doesn't unless i click "see what's in my db" again
+        setMyMovies(data);
+
+        // only runs if no error
+        // TODO: this toast shows twice (when i navigate here via the navbar)
+        toast.success("Bloody oath! Database has been gotted!");
+      } catch (err) {
+        console.log("Error from my-movies.tsx:", err);
+        toast.error(`Network error: ${err}`);
+      } finally {
+        // always re-enable button
+        setIsPending(false);
       }
-
-      if (!data || data.length === 0) {
-        setDbIsEmpty(true);
-        toast.info("Database is empty!");
-        return;
-      }
-
-      // only runs if no error
-      toast.success("Bloody oath! Database has been gotted!");
-      // TODO: this still doesn't trigger a re-render of the table... when i search a movie, my db does get updated, but the "my movies" table doesn't unless i click "see what's in my db" again
-      setMyMovies(data);
-    } catch (err) {
-      console.log("Error from my-movies.tsx:", err);
-      toast.error(`Network error: ${err}`);
-    } finally {
-      // always re-enable button
-      setIsPending(false);
-    }
-  }
+      // Errors in Promises don't get caught by regular try/catch unless you await the Promise
+    };
+    callDbQueryer();
+  }, []); // empty array as 2nd arg = run once on mount
 
   async function handleSeedDbSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
@@ -214,8 +219,8 @@ export default function MyMoviesDb() {
   }
 
   return (
-    <div className="my-8 mx-4 flex flex-col items-center space-y-2">
-      {dbIsEmpty && (
+    <div className="mb-8 mx-4 flex flex-col items-center space-y-2">
+      {/* {dbIsEmpty && (
         // TODO: NEED TO RETHINK THIS BEHAVIOUR! the 'db is empty' msg is appearing after seeding...
         <div>
           <div className="my-2 px-4 py-2 bg-pink-200 rounded-md flex flex-col items-center">
@@ -228,7 +233,9 @@ export default function MyMoviesDb() {
             </p>
           </div>
         </div>
-      )}
+      )} */}
+
+      {/* TODO: fix logic for showing seed button when db is empty */}
 
       {sortedMovies && (
         <div className="mt-2 max-h-128 overflow-x-auto overflow-y-auto border rounded">
@@ -260,15 +267,27 @@ export default function MyMoviesDb() {
                   <td>
                     <div className="w-full flex justify-center">
                       <Button
-                        className={`w-12  text-black ${movie.watched ? "bg-blue-400" : "bg-gray-200"} hover:bg-yellow-300 `}
+                        className={`${movie.watched ? "bg-blue-500 text-white " : "bg-gray-200  text-black"} hover:bg-yellow-300 `}
                         disabled={isPending}
+                        size="sm"
                         onClick={() => handleToggleWatchedClick(movie.id)}
                       >
                         {movie.watched ? (
-                          // make toggle icons bigger
-                          <ToggleRight size={48} />
+                          // TODO: make toggle icons bigger
+                          // <ToggleRight size={72} />
+                          <Image
+                            src="/toggle-right.svg"
+                            alt="toggle on icon"
+                            width={20}
+                            height={20}
+                          />
                         ) : (
-                          <ToggleLeft width={48} />
+                          <Image
+                            src="/toggle-left.svg"
+                            alt="toggle off icon"
+                            width={20}
+                            height={20}
+                          />
                         )}
                       </Button>
                     </div>
@@ -320,7 +339,7 @@ export default function MyMoviesDb() {
                     <div className="w-full mx-2">
                       {/* TODO: users can only delete movies they added */}
                       <Button
-                        className="max-w-sm bg-destructive"
+                        className="bg-destructive"
                         disabled={isPending}
                         size="sm"
                         onClick={() => handleDeleteMovieClick(movie.id)}
@@ -336,31 +355,16 @@ export default function MyMoviesDb() {
         </div>
       )}
 
-      {/* TODO: show db automatically on load */}
-      {/* TODO: fix logic for showing seed button when db is empty */}
-      <form onSubmit={handleRefreshDbSubmit} className="mb-0">
-        <Button className="w-64" disabled={isPending}>
-          <Database />
-          {isPending ? "Thinking..." : "Refresh database"}
-        </Button>
-      </form>
-
       {/* {!dbIsEmpty ||
         (sortedMovies && sortedMovies.length > seedData.length && ( */}
       {/* // TODO: add a db.length < 100 state and only show this msg then */}
       <form
         onSubmit={handleSeedDbSubmit}
-        className="mb-0 mt-12 space-y-2 flex flex-col items-center"
+        className="mt-16 space-y-2 flex flex-col items-center"
       >
         <p className="text-sm">Database looking empty?</p>
-        <p className="text-sm">
-          Click the button below to seed the stupid thing.
-        </p>
-        <p className="text-sm">
-          And be goddamn patient, okay? It&apos;s just 30 seconds.
-        </p>
-        {/*  */}
-        <Button className="w-64" disabled={isPending}>
+        <p className="text-sm">If you&apos;ve got 30 seconds, seed it!</p>
+        <Button className="w-52" disabled={isPending}>
           <Sprout />
           {isPending ? "Thinking..." : "Seed database"}
         </Button>

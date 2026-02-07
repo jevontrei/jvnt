@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+// NOTE: next.js turns on strict mode by default for development, even if you don't see it here
+
 const nextConfig: NextConfig = {
   transpilePackages: ["lucide-react"],
   images: {

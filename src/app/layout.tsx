@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/sonner";
 import NavBar from "@/components/ui/nav-bar";
 import Footer from "@/components/ui/footer";
 
+// NOTE: next.js turns on strict mode by default for development, even if you don't see it here
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

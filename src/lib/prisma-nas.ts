@@ -19,8 +19,9 @@ const adapter = new PrismaPg(pool);
 // named export -- must import with exact name
 // ?? is the nullish coalescing operator
 // ?? returns the first defined (non-nullish) value, while || returns the first truthy value
-export const prisma = globalForPrisma.prisma ?? new PrismaClient({ adapter });
+export const prisma_nas =
+  globalForPrisma.prisma ?? new PrismaClient({ adapter });
 
 if (process.env.NODE_ENV !== "production") {
-  globalForPrisma.prisma = prisma;
+  globalForPrisma.prisma = prisma_nas;
 }
