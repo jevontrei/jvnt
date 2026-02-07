@@ -112,7 +112,7 @@
 //             </thead>
 //             <tbody>
 //               {myBooks.map((book) => (
-//                 <tr key={book.id}>
+//                 <tr key={book.id} className="even:bg-gray-50">
 //                   <td>{book.title}</td>
 //                   <td>{book.read ? <span>Read</span> : null}</td>
 //                   <td>

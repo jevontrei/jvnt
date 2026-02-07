@@ -27,6 +27,7 @@ model Movie {
   watched      Boolean? @default(false)
   // TODO: make rating null if watched is false
   rating       Int?
+  // added_by     String?
 
   // userId String
   // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
